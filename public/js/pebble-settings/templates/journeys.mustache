@@ -1,0 +1,17 @@
+<div class="header">
+  <div class="header-button-area">
+    <button class="header-button" data-journeys-action="save">Save</button>
+  </div>
+  <h1>Journeys</h1>
+</div>
+<div class="journeys wrap">
+  <ul class="journeys-list">
+  {{#journeys}}
+    <li class="journeys-list-item">
+      <span class="journeys-list-item-text" data-journeys-action="edit" data-index="{{index}}">{{from.text}} to {{to.text}}</span>
+      <span class="journeys-list-item-remove" data-journeys-action="delete" data-index="{{index}}">Remove</span>
+    </li>
+  {{/journeys}}
+  </ul>
+  <button class="journeys-add" data-journeys-action="add">Add Journey</button>
+</div>

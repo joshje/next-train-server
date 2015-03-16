@@ -1,0 +1,20 @@
+<div class="header">
+  <div class="header-button-area">
+    <button class="header-button header-button-back" data-journey-action="cancel">Journeys</button>
+  </div>
+  <h1>{{title}}</h1>
+</div>
+
+<div class="journey wrap{{#isEdit}} can-save{{/isEdit}}">
+  <div class="journey-part" data-journey-part="from">
+    <input class="journey-part-input" type="text" placeholder="From" value="{{#journey}}{{#from}}{{text}}{{/from}}{{/journey}}">
+    <div class="journey-part-stations"></div>
+  </div>
+
+  <div class="journey-part" data-journey-part="to">
+    <input class="journey-part-input" type="text" placeholder="To" value="{{#journey}}{{#to}}{{text}}{{/to}}{{/journey}}">
+    <div class="journey-part-stations"></div>
+  </div>
+
+  <button class="journey-save" data-journey-action="save">Save</button>
+</div>

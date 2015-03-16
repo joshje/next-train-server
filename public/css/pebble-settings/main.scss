@@ -1,0 +1,208 @@
+$color-text: #444;
+$color-main: #318DDA;
+$color-light: lighten($color-main, 30%);
+$color-contrast: #FFF;
+$color-tint: lighten($color-main, 40%);
+
+@mixin boxy($bg, $bg-hover: none) {
+  display: block;
+  padding: 0.5em;
+  background: $bg;
+  color: $color-text;
+  border: 1px solid $color-light;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+
+  @if $bg-hover == 'none' {
+  } @else {
+    cursor: pointer;
+
+    &:hover {
+      background: $bg-hover;
+    }
+  }
+}
+
+@mixin linear-gradient($from, $to) {
+  background-color: $to;
+  background-image: -webkit-linear-gradient(top, $from, $to);
+  background-image: -moz-linear-gradient(top, $from, $to);
+  background-image: -ms-linear-gradient(top, $from, $to);
+  background-image: -o-linear-gradient(top, $from, $to);
+  background-image: linear-gradient(top, $from, $to);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.pebble-settings {
+
+  .header {
+    background: $color-tint;
+    border-bottom: 1px solid $color-light;
+    color: $color-main;
+    padding: 0.5em 1em;
+    margin: 0 0 1em;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    &-button-area {
+      flex: none;
+    }
+
+    &-button {
+      font-size: 1em;
+      position: relative;
+      margin: 0.25em 0;
+      padding: 0.5em;
+      background: $color-light;
+      border: none;
+      color: $color-text;
+      cursor: pointer;
+      line-height: 1;
+
+      &:hover {
+        background: darken($color-light, 5%);
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &-back {
+        left: 0.5em;
+        padding-left: 0.25em;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: -0.75em;
+          top: 0;
+          border-top: 1em solid transparent;
+          border-bottom: 1em solid transparent;
+          border-right: 0.75em solid $color-light;
+        }
+
+        &:hover:before {
+          border-right-color: darken($color-light, 5%);
+        }
+      }
+
+    }
+
+    h1 {
+      font-size: 1.25em;
+      font-weight: normal;
+      margin: 0;
+      padding: 0.5em 0;
+      text-align: center;
+      flex: 1;
+    }
+  }
+
+  .wrap {
+    margin: 1em;
+  }
+
+  input {
+    @include boxy($color-contrast);
+
+    &:hover,
+    &:focus {
+      border-color: $color-main;
+      outline: none;
+    }
+  }
+
+  .journeys-add,
+  .journey-save {
+    @include boxy($color-tint, darken($color-tint, 5%));
+    margin: 0.5em 0 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .journeys {
+    &-list {
+      list-style: none;
+      margin: 1em 0;
+      padding: 0;
+
+      &-item {
+        position: relative;
+        @include boxy($color-contrast);
+        padding: 0;
+        border-top: none;
+
+        &:first-child {
+          border-top: 1px solid $color-light;
+        }
+
+        &-text {
+          display: block;
+          cursor: pointer;
+          padding: 0.5em;
+          white-space: nowrap;
+          padding-right: 77px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          &:hover {
+            background: $color-tint;
+          }
+        }
+
+        &-remove {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 1em;
+          padding: 0.5em;
+          color: $color-text;
+          background: $color-contrast;
+          border-left: 1px solid $color-light;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $color-tint;
+          }
+        }
+      }
+    }
+  }
+
+  .journey {
+    &-part {
+      &-input {
+        margin: 0.5em 0 0;
+      }
+    }
+    .journey-save {
+      display: none;
+    }
+    &.can-save {
+      .journey-save {
+        display: inline-block;
+      }
+    }
+  }
+
+  .station-list {
+    list-style: none;
+    margin: 0 0 1em;
+    padding: 0;
+
+    &-item {
+      @include boxy($color-contrast, $color-tint);
+      border-top: none;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "next-train-server",
+  "version": "0.0.0",
+  "authors": [
+    "Josh Emerson <josh.j.emerson@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "eventEmitter": "~4.2.11",
+    "requirejs-hogan-plugin": "~0.3.1",
+    "requirejs": "~2.1.16"
+  }
+}

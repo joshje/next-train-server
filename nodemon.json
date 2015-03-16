@@ -1,0 +1,9 @@
+{
+  "ignore": [
+    ".git/*",
+    "public/*",
+    "gulpfile.js",
+    "node_modules/*",
+    "bower_components/*"
+  ]
+}

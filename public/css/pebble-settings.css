@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; }
+
+.pebble-settings .header {
+  background: #deedf9;
+  border-bottom: 1px solid #b3d5f1;
+  color: #318DDA;
+  padding: 0.5em 1em;
+  margin: 0 0 1em;
+  position: relative;
+  display: flex;
+  flex-direction: row; }
+  .pebble-settings .header-button-area {
+    flex: none; }
+  .pebble-settings .header-button {
+    font-size: 1em;
+    position: relative;
+    margin: 0.25em 0;
+    padding: 0.5em;
+    background: #b3d5f1;
+    border: none;
+    color: #444;
+    cursor: pointer;
+    line-height: 1; }
+    .pebble-settings .header-button:hover {
+      background: #9dc9ed; }
+    .pebble-settings .header-button:focus {
+      outline: none; }
+    .pebble-settings .header-button-back {
+      left: 0.5em;
+      padding-left: 0.25em; }
+      .pebble-settings .header-button-back:before {
+        content: "";
+        position: absolute;
+        left: -0.75em;
+        top: 0;
+        border-top: 1em solid transparent;
+        border-bottom: 1em solid transparent;
+        border-right: 0.75em solid #b3d5f1; }
+      .pebble-settings .header-button-back:hover:before {
+        border-right-color: #9dc9ed; }
+  .pebble-settings .header h1 {
+    font-size: 1.25em;
+    font-weight: normal;
+    margin: 0;
+    padding: 0.5em 0;
+    text-align: center;
+    flex: 1; }
+.pebble-settings .wrap {
+  margin: 1em; }
+.pebble-settings input {
+  display: block;
+  padding: 0.5em;
+  background: #FFF;
+  color: #444;
+  border: 1px solid #b3d5f1;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em; }
+  .pebble-settings input:hover, .pebble-settings input:focus {
+    border-color: #318DDA;
+    outline: none; }
+.pebble-settings .journeys-add, .pebble-settings .journey-save {
+  display: block;
+  padding: 0.5em;
+  background: #deedf9;
+  color: #444;
+  border: 1px solid #b3d5f1;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 0.5em 0 0; }
+  .pebble-settings .journeys-add:hover, .pebble-settings .journey-save:hover {
+    background: #c8e1f5; }
+  .pebble-settings .journeys-add:focus, .pebble-settings .journey-save:focus {
+    outline: none; }
+.pebble-settings .journeys-list {
+  list-style: none;
+  margin: 1em 0;
+  padding: 0; }
+  .pebble-settings .journeys-list-item {
+    position: relative;
+    display: block;
+    padding: 0.5em;
+    background: #FFF;
+    color: #444;
+    border: 1px solid #b3d5f1;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1em;
+    padding: 0;
+    border-top: none; }
+    .pebble-settings .journeys-list-item:first-child {
+      border-top: 1px solid #b3d5f1; }
+    .pebble-settings .journeys-list-item-text {
+      display: block;
+      cursor: pointer;
+      padding: 0.5em;
+      white-space: nowrap;
+      padding-right: 77px;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      .pebble-settings .journeys-list-item-text:hover {
+        background: #deedf9; }
+    .pebble-settings .journeys-list-item-remove {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 1em;
+      padding: 0.5em;
+      color: #444;
+      background: #FFF;
+      border-left: 1px solid #b3d5f1;
+      cursor: pointer; }
+      .pebble-settings .journeys-list-item-remove:hover {
+        background-color: #deedf9; }
+.pebble-settings .journey-part-input {
+  margin: 0.5em 0 0; }
+.pebble-settings .journey .journey-save {
+  display: none; }
+.pebble-settings .journey.can-save .journey-save {
+  display: inline-block; }
+.pebble-settings .station-list {
+  list-style: none;
+  margin: 0 0 1em;
+  padding: 0; }
+  .pebble-settings .station-list-item {
+    display: block;
+    padding: 0.5em;
+    background: #FFF;
+    color: #444;
+    border: 1px solid #b3d5f1;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1em;
+    cursor: pointer;
+    border-top: none; }
+    .pebble-settings .station-list-item:hover {
+      background: #deedf9; }
