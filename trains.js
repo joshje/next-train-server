@@ -15,10 +15,14 @@ var getTrains = function(opts, callback) {
     filterCrs: opts.to,
     filterType: 'to'
   }, function(err, response) {
+    if (err) {
+      return callback(err);
+    }
+
     var result = response.GetStationBoardResult;
     var services = result.trainServices && result.trainServices.service;
 
-    callback({
+    callback(null, {
       from: {
         name: result.locationName,
         code: result.crs
