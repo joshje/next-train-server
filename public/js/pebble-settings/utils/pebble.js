@@ -2,7 +2,12 @@ define(function() {
 
   var getConfig = function() {
     var parts = location.hash.split('#');
-    var options = JSON.parse(decodeURIComponent(parts[parts.length - 1]));
+    var config = parts[parts.length - 1];
+
+    if (! config) {
+      return {};
+    }
+    var options = JSON.parse(decodeURIComponent(config));
     return options;
   };
 

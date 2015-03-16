@@ -1,5 +1,6 @@
 var express = require('express');
 var handlebars = require('express-handlebars');
+var config = require('./config');
 var ldb = require('./ldb');
 var stations = require('./stations');
 var trains = require('./trains');
@@ -29,5 +30,5 @@ app.get('/api/stations', stations.getStationsRoute);
 app.get('/api/trains', trains.getTrainsRoute);
 app.use(express.static(__dirname + '/public'));
 
-var server = app.listen(3000);
+var server = app.listen(config.port);
 console.log('Server is listening on port %d', server.address().port);
