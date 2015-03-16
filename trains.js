@@ -32,9 +32,16 @@ var getTrains = function(opts, callback) {
         code: result.filtercrs
       },
       trains: _.map(services, function(service) {
+        var departureTime = (service.etd == 'On time') ? service.std : service.etd;
+        var departureParts = departureTime.split(':');
+
+        var departureDate = new Date();
+        departureDate = departureDate.setHours(departureParts[0], departureParts[1], 0, 0);
+        departureDate = departureDate;
+
         return {
-          std: service.std,
-          etd: service.etd,
+          time: departureTime,
+          date: departureDate,
           platform: service.platform,
           serviceID: service.serviceID
         };
