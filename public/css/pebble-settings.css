@@ -4,9 +4,8 @@ body {
   font-family: sans-serif; }
 
 .pebble-settings .header {
-  background: #deedf9;
-  border-bottom: 1px solid #b3d5f1;
-  color: #318DDA;
+  background: #00AAFF;
+  color: #FFF;
   padding: 0.5em 1em;
   margin: 0 0 1em;
   position: relative;
@@ -19,13 +18,11 @@ body {
     position: relative;
     margin: 0.25em 0;
     padding: 0.5em;
-    background: #b3d5f1;
+    background: #FFF;
     border: none;
-    color: #444;
+    color: #00AAFF;
     cursor: pointer;
     line-height: 1; }
-    .pebble-settings .header-button:hover {
-      background: #9dc9ed; }
     .pebble-settings .header-button:focus {
       outline: none; }
     .pebble-settings .header-button-back {
@@ -38,9 +35,7 @@ body {
         top: 0;
         border-top: 1em solid transparent;
         border-bottom: 1em solid transparent;
-        border-right: 0.75em solid #b3d5f1; }
-      .pebble-settings .header-button-back:hover:before {
-        border-right-color: #9dc9ed; }
+        border-right: 0.75em solid #FFF; }
   .pebble-settings .header h1 {
     font-size: 1.25em;
     font-weight: normal;
@@ -54,27 +49,31 @@ body {
   display: block;
   padding: 0.5em;
   background: #FFF;
-  color: #444;
-  border: 1px solid #b3d5f1;
+  color: #00AAFF;
+  border: 1px solid #00AAFF;
   width: 100%;
   box-sizing: border-box;
   font-size: 1em; }
   .pebble-settings input:hover, .pebble-settings input:focus {
-    border-color: #318DDA;
+    border-color: #00AAFF;
     outline: none; }
 .pebble-settings .journeys-add, .pebble-settings .journey-save {
   display: block;
   padding: 0.5em;
-  background: #deedf9;
-  color: #444;
-  border: 1px solid #b3d5f1;
+  background: #00AAFF;
+  color: #FFF;
+  border: 1px solid #00AAFF;
   width: 100%;
   box-sizing: border-box;
   font-size: 1em;
   cursor: pointer;
-  margin: 0.5em 0 0; }
+  color: #FFF;
+  margin: 0.5em 0 0;
+  border-width: 3px;
+  border-style: double; }
   .pebble-settings .journeys-add:hover, .pebble-settings .journey-save:hover {
-    background: #c8e1f5; }
+    color: #00AAFF;
+    background: #FFF; }
   .pebble-settings .journeys-add:focus, .pebble-settings .journey-save:focus {
     outline: none; }
 .pebble-settings .journeys-list {
@@ -86,25 +85,26 @@ body {
     display: block;
     padding: 0.5em;
     background: #FFF;
-    color: #444;
-    border: 1px solid #b3d5f1;
+    color: #00AAFF;
+    border: 1px solid #00AAFF;
     width: 100%;
     box-sizing: border-box;
     font-size: 1em;
     padding: 0;
     border-top: none; }
     .pebble-settings .journeys-list-item:first-child {
-      border-top: 1px solid #b3d5f1; }
+      border-top: 1px solid #00AAFF; }
     .pebble-settings .journeys-list-item-text {
       display: block;
-      cursor: pointer;
       padding: 0.5em;
       white-space: nowrap;
       padding-right: 77px;
       overflow: hidden;
-      text-overflow: ellipsis; }
+      text-overflow: ellipsis;
+      cursor: pointer; }
       .pebble-settings .journeys-list-item-text:hover {
-        background: #deedf9; }
+        background-color: #00AAFF;
+        color: #FFF; }
     .pebble-settings .journeys-list-item-remove {
       display: block;
       position: absolute;
@@ -112,12 +112,13 @@ body {
       right: 0;
       font-size: 1em;
       padding: 0.5em;
-      color: #444;
+      color: #00AAFF;
       background: #FFF;
-      border-left: 1px solid #b3d5f1;
+      border-left: 1px solid #00AAFF;
       cursor: pointer; }
       .pebble-settings .journeys-list-item-remove:hover {
-        background-color: #deedf9; }
+        background-color: #00AAFF;
+        color: #FFF; }
 .pebble-settings .journey-part-input {
   margin: 0.5em 0 0; }
 .pebble-settings .journey .journey-save {
@@ -132,12 +133,13 @@ body {
     display: block;
     padding: 0.5em;
     background: #FFF;
-    color: #444;
-    border: 1px solid #b3d5f1;
+    color: #00AAFF;
+    border: 1px solid #00AAFF;
     width: 100%;
     box-sizing: border-box;
     font-size: 1em;
     cursor: pointer;
     border-top: none; }
     .pebble-settings .station-list-item:hover {
-      background: #deedf9; }
+      color: #FFF;
+      background: #00AAFF; }

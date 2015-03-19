@@ -1,25 +1,23 @@
-$color-text: #444;
-$color-main: #318DDA;
-$color-light: lighten($color-main, 30%);
+$color-main: #00AAFF;
 $color-contrast: #FFF;
-$color-tint: lighten($color-main, 40%);
 
-@mixin boxy($bg, $bg-hover: none) {
+@mixin boxy($color, $bg, $border, $hover: none) {
   display: block;
   padding: 0.5em;
   background: $bg;
-  color: $color-text;
-  border: 1px solid $color-light;
+  color: $color;
+  border: 1px solid $border;
   width: 100%;
   box-sizing: border-box;
   font-size: 1em;
 
-  @if $bg-hover == 'none' {
+  @if $hover == 'none' {
   } @else {
     cursor: pointer;
 
     &:hover {
-      background: $bg-hover;
+      color: $bg;
+      background: $color;
     }
   }
 }
@@ -42,9 +40,8 @@ body {
 .pebble-settings {
 
   .header {
-    background: $color-tint;
-    border-bottom: 1px solid $color-light;
-    color: $color-main;
+    background: $color-main;
+    color: $color-contrast;
     padding: 0.5em 1em;
     margin: 0 0 1em;
     position: relative;
@@ -60,15 +57,11 @@ body {
       position: relative;
       margin: 0.25em 0;
       padding: 0.5em;
-      background: $color-light;
+      background: $color-contrast;
       border: none;
-      color: $color-text;
+      color: $color-main;
       cursor: pointer;
       line-height: 1;
-
-      &:hover {
-        background: darken($color-light, 5%);
-      }
 
       &:focus {
         outline: none;
@@ -85,11 +78,7 @@ body {
           top: 0;
           border-top: 1em solid transparent;
           border-bottom: 1em solid transparent;
-          border-right: 0.75em solid $color-light;
-        }
-
-        &:hover:before {
-          border-right-color: darken($color-light, 5%);
+          border-right: 0.75em solid $color-contrast;
         }
       }
 
@@ -110,7 +99,7 @@ body {
   }
 
   input {
-    @include boxy($color-contrast);
+    @include boxy($color-main, $color-contrast, $color-main);
 
     &:hover,
     &:focus {
@@ -121,8 +110,11 @@ body {
 
   .journeys-add,
   .journey-save {
-    @include boxy($color-tint, darken($color-tint, 5%));
+    @include boxy($color-contrast, $color-main, $color-main, true);
+    color: $color-contrast;
     margin: 0.5em 0 0;
+    border-width: 3px;
+    border-style: double;
 
     &:focus {
       outline: none;
@@ -137,25 +129,26 @@ body {
 
       &-item {
         position: relative;
-        @include boxy($color-contrast);
+        @include boxy($color-main, $color-contrast, $color-main);
         padding: 0;
         border-top: none;
 
         &:first-child {
-          border-top: 1px solid $color-light;
+          border-top: 1px solid $color-main;
         }
 
         &-text {
           display: block;
-          cursor: pointer;
           padding: 0.5em;
           white-space: nowrap;
           padding-right: 77px;
           overflow: hidden;
           text-overflow: ellipsis;
+          cursor: pointer;
 
           &:hover {
-            background: $color-tint;
+            background-color: $color-main;
+            color: $color-contrast;
           }
         }
 
@@ -166,13 +159,14 @@ body {
           right: 0;
           font-size: 1em;
           padding: 0.5em;
-          color: $color-text;
+          color: $color-main;
           background: $color-contrast;
-          border-left: 1px solid $color-light;
+          border-left: 1px solid $color-main;
           cursor: pointer;
 
           &:hover {
-            background-color: $color-tint;
+            background-color: $color-main;
+            color: $color-contrast;
           }
         }
       }
@@ -201,7 +195,7 @@ body {
     padding: 0;
 
     &-item {
-      @include boxy($color-contrast, $color-tint);
+      @include boxy($color-main, $color-contrast, $color-main, true);
       border-top: none;
     }
   }
