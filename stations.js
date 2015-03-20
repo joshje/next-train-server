@@ -9,8 +9,6 @@ var lastFetched;
 var ONE_HOUR = 60 * 60 * 1000;
 
 var getStations = function(callback) {
-  console.log('Getting stations');
-
   if (stations && lastFetched + ONE_HOUR > Date.now()) {
     return callback(null, stations);
   }

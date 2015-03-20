@@ -1,4 +1,5 @@
 var express = require('express');
+var morgan = require('morgan');
 var handlebars = require('express-handlebars');
 var config = require('./config');
 var ldb = require('./ldb');
@@ -15,14 +16,18 @@ app.set('view engine', 'handlebars');
 
 ldb.init(function(err, client) {
   if (err) {
-    console.log('Failed to initialize ldb');
+    console.log('Failed to initialize ldb', err);
     return;
   }
+
+  console.log('Connected to ldb');
 
   trains.init({
     client: client
   });
 });
+
+app.use(morgan('tiny'));
 
 app.get('/pebble/settings', pebble.settingsRoute);
 

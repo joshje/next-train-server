@@ -7,7 +7,6 @@ var getTrains = function(opts, callback) {
       error: 'Server initializing'
     });
   }
-  console.log('Getting trains from %s to %s', opts.from, opts.to);
 
   client.GetDepartureBoard({
     numRows: 3,
