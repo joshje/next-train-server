@@ -1,6 +1,30 @@
 var _ = require('lodash');
 var client;
 
+var transformServices = function(services) {
+  return _.chain(services)
+  .map(function(service) {
+    var departureTime = (service.etd == 'On time') ? service.std : service.etd;
+    var departureParts = departureTime.split(':');
+
+    var departureDate = new Date();
+    departureDate = departureDate.setHours(departureParts[0], departureParts[1], 0, 0);
+    departureDate = departureDate;
+
+    return {
+      time: departureTime,
+      date: departureDate,
+      platform: service.platform,
+      serviceID: service.serviceID
+    };
+  })
+  .filter(function(service) {
+    return service.date > Date.now();
+  })
+  .slice(0, 3)
+  .value();
+};
+
 var getTrains = function(opts, callback) {
   if (! client) {
     return callback({
@@ -9,7 +33,7 @@ var getTrains = function(opts, callback) {
   }
 
   client.GetDepartureBoard({
-    numRows: 3,
+    numRows: 6,
     crs: opts.from,
     filterCrs: opts.to,
     filterType: 'to'
@@ -30,21 +54,7 @@ var getTrains = function(opts, callback) {
         name: result.filterLocationName,
         code: result.filtercrs
       },
-      trains: _.map(services, function(service) {
-        var departureTime = (service.etd == 'On time') ? service.std : service.etd;
-        var departureParts = departureTime.split(':');
-
-        var departureDate = new Date();
-        departureDate = departureDate.setHours(departureParts[0], departureParts[1], 0, 0);
-        departureDate = departureDate;
-
-        return {
-          time: departureTime,
-          date: departureDate,
-          platform: service.platform,
-          serviceID: service.serviceID
-        };
-      })
+      trains: transformServices(services)
     });
   });
 };
