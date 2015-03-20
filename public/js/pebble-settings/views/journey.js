@@ -2,12 +2,14 @@ define([
   'eventEmitter',
   'data/stations',
   'hgn!templates/journey',
-  'hgn!templates/station-list'
+  'hgn!templates/station-list',
+  'utils/utils'
 ], function(
   EventEmitter,
   stationsData,
   journeyTemplate,
-  stationListTemplate
+  stationListTemplate,
+  utils
 ) {
   var journey = new EventEmitter();
   var stations = [];
@@ -82,7 +84,7 @@ define([
 
     contentEl.addEventListener('click', function(e) {
       var target = e.target;
-      var action = target.getAttribute('data-journey-action');
+      var action = utils.closestAttr(target, 'data-journey-action');
 
       if (! action) return;
       e.preventDefault();

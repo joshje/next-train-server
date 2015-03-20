@@ -1,9 +1,11 @@
 define([
   'eventEmitter',
-  'hgn!templates/journeys'
+  'hgn!templates/journeys',
+  'utils/utils'
 ], function(
   EventEmitter,
-  journeysTemplate
+  journeysTemplate,
+  utils
 ) {
   var journeys = new EventEmitter();
   var contentEl;
@@ -13,7 +15,7 @@ define([
 
     contentEl.addEventListener('click', function(e) {
       var target = e.target;
-      var action = target.getAttribute('data-journeys-action');
+      var action = utils.closestAttr(target, 'data-journeys-action');
 
       if (! action) return;
 

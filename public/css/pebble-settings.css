@@ -57,7 +57,7 @@ body {
   .pebble-settings input:hover, .pebble-settings input:focus {
     border-color: #00AAFF;
     outline: none; }
-.pebble-settings .journeys-add, .pebble-settings .journey-save {
+.pebble-settings .btn {
   display: block;
   padding: 0.5em;
   background: #00AAFF;
@@ -71,14 +71,14 @@ body {
   margin: 0.5em 0 0;
   border-width: 3px;
   border-style: double; }
-  .pebble-settings .journeys-add:hover, .pebble-settings .journey-save:hover {
+  .pebble-settings .btn:hover {
     color: #00AAFF;
     background: #FFF; }
-  .pebble-settings .journeys-add:focus, .pebble-settings .journey-save:focus {
+  .pebble-settings .btn:focus {
     outline: none; }
 .pebble-settings .journeys-list {
   list-style: none;
-  margin: 1em 0;
+  margin: 1em 0 0;
   padding: 0; }
   .pebble-settings .journeys-list-item {
     position: relative;
@@ -91,9 +91,7 @@ body {
     box-sizing: border-box;
     font-size: 1em;
     padding: 0;
-    border-top: none; }
-    .pebble-settings .journeys-list-item:first-child {
-      border-top: 1px solid #00AAFF; }
+    border-bottom: none; }
     .pebble-settings .journeys-list-item-text {
       display: block;
       padding: 0.5em;
@@ -119,6 +117,27 @@ body {
       .pebble-settings .journeys-list-item-remove:hover {
         background-color: #00AAFF;
         color: #FFF; }
+.pebble-settings .journeys-add {
+  display: block;
+  padding: 0.5em;
+  background: #FFF;
+  color: #00AAFF;
+  border: 1px solid #00AAFF;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: left;
+  margin-top: none; }
+  .pebble-settings .journeys-add:hover {
+    color: #FFF;
+    background: #00AAFF; }
+  .pebble-settings .journeys-add-plus {
+    display: inline-block;
+    position: relative;
+    font-size: 1.4em;
+    line-height: 0.5;
+    margin-right: 0.1em; }
 .pebble-settings .journey-part-input {
   margin: 0.5em 0 0; }
 .pebble-settings .journey .journey-save {
