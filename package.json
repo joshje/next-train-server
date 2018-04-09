@@ -16,7 +16,7 @@
     "lodash": "^3.4.0",
     "morgan": "^1.5.2",
     "request": "^2.53.0",
-    "soap": "^0.8.0"
+    "soap": "^0.24.0"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
