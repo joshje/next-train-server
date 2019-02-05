@@ -13,10 +13,10 @@
     "csv-parse": "0.0.9",
     "express": "^4.12.2",
     "express-handlebars": "^1.2.2",
-    "lodash": "^3.4.0",
+    "lodash": "^4.17.11",
     "morgan": "^1.5.2",
     "request": "^2.53.0",
-    "soap": "^0.8.0"
+    "soap": "^0.24.0"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
