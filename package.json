@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^1.0.0",
-    "csv-parse": "0.0.9",
+    "csv-parse": "4.4.6",
     "express": "^4.12.2",
     "express-handlebars": "^1.2.2",
     "lodash": "^3.4.0",
